@@ -1,96 +1,148 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Saya</title>
+  <title>Website saya</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="style_saya.css">
+
 </head>
+
 <body>
 
   <!-- Navbar -->
-  <div class="navbar">
-    <div class="brand">Brand</div>
-      <div>  
-      <a class="menu-header" href="#header">Header</a>
+  <nav class="navbar navbar-expand-md bg-primary rounded px-3">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="#">Brand</a>
+      <!-- TOMBOL HAMBURGER -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- MENU YANG KELUAR -->
+      <div class="collapse navbar-collapse bg-primary md-4" id="menu">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item"><a class="nav-link text-white" href="#header">Header</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#biodata">Biodata</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#portofolio">Portofolio</a></li>
+        </ul>
       </div>
-      <div>
-      <a class="menu-bio" href="#biodata">Biodata</a>
-      </div>
-      <div>
-      <a class="menu-porto" href="#portofolio">Portofolio</a>
-      </div>
-  </div>
+    </div>
+  </nav>
 
   <!-- Header -->
-  <section class="header" id="header">
-    <div class="header-text">
-      <h1>Selamat Datang di Website Saya</h1>
-      <p>Ini adalah contoh header dengan dua kolom. Kolom kiri berisi teks seperti ini.</p>
-      <button>Pelajari Lebih Lanjut</button>
-    </div>
-    <div class="header-img">
-      <img src="https://placehold.co/200x200" alt="Header Image">
+  <section class="container my-4" id="header">
+    <div class="row align-items-center text-center text-md-start">
+
+      <div class="col-md-6 mb3">
+        <h1>Selamat Datang Di Website Saya</h1>
+        <p>Ini adalah contoh header dengan dua kolom. Kolom kiri berisi teks seperti ini.</p>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary w-30" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          pelajari lebih lanjut
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Social Media</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col">
+                      <a href="https://www.youtube.com/@saepul4629" target="_blank">
+                      <img src="download.png" alt="Klik untuk ke YouTube" style="width: 100px; height: auto; cursor: pointer;">
+                      </a>
+                    </div>
+                    <div class="col">
+                      <a href="https://www.instagram.com/saepul.1503/" target="_blank">
+                      <img src="images.jpg" alt="Klik untuk ke YouTube" style="width: 85px; height: 80px; cursor: pointer;">
+                      </a>
+                    </div>
+                    <div class="col">
+                      <a href="https://www.tiktok.com/@pullllll_1" target="_blank">
+                      <img src="tik-tok-logo-33090.png" alt="Klik untuk ke YouTube" style="width: 100px; height: auto; cursor: pointer;">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 text-center">
+        <img src="https://placehold.co/200x200" alt="Header Image" class="rounded-circle">
+      </div>
+
     </div>
   </section>
 
   <!-- About Me -->
-  <section class="about" id="biodata">
-    <h2 class="about-title">About Me</h2>
-    <p class="about-description">A brief introduction about myself</p>
-      <div class="data1">
-        <span class="label">Full Name:</span>
-        <span>Saepul</span>
+  <section class="container my-5" id="biodata">
+    <h2 class="text-center text-primary">About Me</h2>
+    <p class="text-center">A brief introduction about myself</p>
+
+    <div class="row g-3 mt-3 text-center">
+      <div class="col-md-4 col-sm-6">
+        <div class="p-3 bg-light rounded">Full Name: Saepul</div>
       </div>
-      <div class="data2">
-        <span class="label">Education:</span>
-        <span>pelajar</span>
+      <div class="col-md-4 col-sm-6">
+        <div class="p-3 bg-light rounded">Education: pelajar</div>
       </div>
-      <div class="data3">
-        <span class="label">Pekerjaan:</span>
-        <span>Pelajar</span>
+      <div class="col-md-4 col-sm-6">
+        <div class="p-3 bg-light rounded">Pekerjaan: Pelajar</div>
       </div>
-      <div class="data4">
-        <span class="label">Contact:</span>
-        <span>epuls690@gmail.com</span>
+      <div class="col-md-4 col-sm-6">
+        <div class="p-3 bg-light rounded">Contact: epuls680@gmail.com</div>
       </div>
-      <div class="data5">
-        <span class="label">Hobi:</span>
-        <span>Ngoding</span>
+      <div class="col-md-4 col-sm-6">
+        <div class="p-3 bg-light rounded">Hobi: Ngoding</div>
       </div>
-      <div class="data6">
-        <span class="label">Alamat:</span>
-        <span>Kota Banjar</span>
+      <div class="col-md-4 col-sm-6">
+        <div class="p-3 bg-light rounded">Alamat: Kota Banjar</div>
       </div>
+    </div>
   </section>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+
   <!-- Portofolio -->
-  <section class="portofolio" id="portofolio">
-    <h2 class="tittle-porto">Portofolio</h2>
-    <div class="gambar-1">
-      <img src="https://placehold.co/200x200" alt="Proyek 1">
-    </div>
-    <div class="desc-img1"> 
-      <h3>Proyek 1</h3>
-      <p>Deskripsi proyek 1.</p>
-    </div>
+  <section class="container my-5" id="portofolio">
+    <h2 class="text-center text-primary mb-4">Portofolio</h2>
 
-    <div class="gambar-2">
-      <img src="https://placehold.co/200x200" alt="Proyek 2">
-    </div>
-    <div class="desc-img2">
-      <h3>Proyek 2</h3>
-      <p>Deskripsi proyek 2.</p>
-    </div>
-
-    <div class="gambar-3">
-      <img src="https://placehold.co/200x200" alt="Proyek 3">
-    </div>
-    <div class="desc-img3">
-      <h3>Proyek 3</h3>
-      <p>Deskripsi proyek 3.</p>
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="https://placehold.co/200x200" class="img-fluid rounded" alt="Proyek 1">
+          <h5 class="mt-2">Proyek 1</h5>
+          <p>Deskripsi proyek 1.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="https://placehold.co/200x200" class="img-fluid rounded" alt="Proyek 2">
+          <h5 class="mt-2">Proyek 2</h5>
+          <p>Deskripsi proyek 2.</p>
+        </div>
+        <div class="col-md-4">
+          <img src="https://placehold.co/200x200" class="img-fluid rounded" alt="Proyek 3">
+          <h5 class="mt-2">Proyek 3</h5>
+          <p>Deskripsi proyek 3.</p>
+        </div>
+      </div>
     </div>
   </section>
 
 </body>
+
 </html>
