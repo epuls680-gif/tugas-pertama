@@ -10,7 +10,7 @@ html {
 /*navbar*/
 .navbar {
     display: grid;
-    grid-template-columns: auto 80px 80px 80px;
+    grid-template-columns: 100%;
     grid-template-rows: auto;
     grid-template-areas: "brand menu1 menu2 menu3";
     align-items: center;
@@ -20,7 +20,6 @@ html {
     border-radius: 10px;
     padding: 0 15px;
     text-align: center;
-
 }
 
 .brand {
@@ -212,5 +211,3 @@ html {
 .desc-img3 {
     grid-area: desc3;
 }
-
-
