@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Landing Page</title>
+
+<!-- Bootstrap 5 CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+/* ===============================
+   GLOBAL STYLING
+=================================*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8fbff;
+  color: #1f2d3d;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.btn-custom {
+  background: #0d6efd;
+  color: white;
+  border-radius: 30px;
+  padding: 10px 25px;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background: #0b5ed7;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(13,110,253,0.3);
+}
+
+/* ===============================
+   NAVBAR
+=================================*/
+.navbar {
+  background: white;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.nav-link {
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #0d6efd !important;
+}
+
+.nav-link::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #0d6efd;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ===============================
+   HERO SECTION
+=================================*/
+.hero {
+  background: linear-gradient(135deg, #0d6efd, #4dabf7);
+  color: white;
+  padding: 120px 0;
+}
+
+.hero img {
+  border-radius: 50%;
+  border: 5px solid white;
+  width: 250px;
+}
+
+/* ===============================
+   CARD HOVER
+=================================*/
+.card {
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* ===============================
+   FOOTER
+=================================*/
+footer {
+  background: #0d1b2a;
+  color: white;
+  padding: 20px 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-primary" href="#">MyProfile</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero text-center">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4">
+        <img src="https://picsum.photos/500/500" alt="Profile">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="fw-bold">Saepul</h1>
+        <p class="lead">Frontend Developer | UI Designer | Problem Solver</p>
+        <button class="btn btn-custom mt-3" data-bs-toggle="modal" data-bs-target="#profileModal">
+          Lihat Detail Profil
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section-padding">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">About Me</h2>
+    <p class="col-lg-8 mx-auto">
+      Saya adalah Frontend Developer yang berpengalaman dalam membangun
+      website modern, responsif, dan user-friendly menggunakan HTML, CSS, Bootstrap,
+      serta teknologi web terbaru.
+    </p>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="section-padding bg-light">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">Skills</h2>
+
+    <div class="mb-3">
+      <label>HTML</label>
+      <div class="progress">
+        <div class="progress-bar bg-primary" style="width: 95%">95%</div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label>CSS</label>
+      <div class="progress">
+        <div class="progress-bar bg-info" style="width: 90%">90%</div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label>Bootstrap</label>
+      <div class="progress">
+        <div class="progress-bar bg-success" style="width: 85%">85%</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= PORTFOLIO ================= -->
+<section id="portfolio" class="section-padding">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-5">Portfolio</h2>
+
+    <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="card mx-auto" style="width: 18rem;">
+            <img src="https://picsum.photos/500/300" class="card-img-top" alt="Project 1">
+            <div class="card-body">
+              <h5 class="card-title">Project 1</h5>
+              <p class="card-text">Landing page modern dan responsif.</p>
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal">
+                Detail
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="card mx-auto" style="width: 18rem;">
+            <img src="https://picsum.photos/501/300" class="card-img-top" alt="Project 2">
+            <div class="card-body">
+              <h5 class="card-title">Project 2</h5>
+              <p class="card-text">Website company profile profesional.</p>
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#portfolioModal">
+                Detail
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section-padding bg-light">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Contact</h2>
+    <p>Email: epuls680@gmail.com</p>
+    <p>LinkedIn: linkedin.com/in/johndeveloper</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="text-center">
+  <div class="container">
+    <p class="mb-0">© 2026 Saepul Developer. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- ================= MODAL PROFILE ================= -->
+<div class="modal fade" id="profileModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detail Profil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Saya berpengalaman lebih dari 3 tahun dalam pengembangan frontend dan
+        telah mengerjakan berbagai project skala kecil hingga besar.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL PORTFOLIO ================= -->
+<div class="modal fade" id="portfolioModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detail Project</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Project ini dibuat menggunakan HTML, CSS, dan Bootstrap dengan desain modern
+        dan performa optimal.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
