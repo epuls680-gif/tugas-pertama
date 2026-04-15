@@ -126,6 +126,7 @@ footer {
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
         <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#produk">Produk</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -239,6 +240,23 @@ footer {
   </div>
 </section>
 
+<!-- ================= PRODUK ================= -->
+<section id="produk" class="section-padding bg-light">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">Produk</h2>
+
+    <!-- FILTER -->
+    <div class="text-center mb-4">
+      <button class="btn btn-outline-primary m-1" onclick="filterProduk('all')">Semua</button>
+      <button class="btn btn-outline-primary m-1" onclick="filterProduk('web')">Web</button>
+      <button class="btn btn-outline-primary m-1" onclick="filterProduk('design')">Design</button>
+    </div>
+
+    <!-- LIST PRODUK -->
+    <div class="row" id="list-produk"></div>
+  </div>
+</section>
+
 <!-- ================= CONTACT ================= -->
 <section id="contact" class="section-padding bg-light">
   <div class="container text-center">
@@ -290,5 +308,72 @@ footer {
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+<script>
+// ================= DATA PRODUK =================
+const produk = [
+  {
+    nama: "Website Company Profile",
+    harga: 1500000,
+    deskripsi: "Website profesional untuk bisnis",
+    gambar: "https://picsum.photos/400/300?1",
+    kategori: "web"
+  },
+  {
+    nama: "Landing Page",
+    harga: 500000,
+    deskripsi: "Landing page modern & responsive",
+    gambar: "https://picsum.photos/400/300?2",
+    kategori: "web"
+  },
+  {
+    nama: "UI Design Mobile App",
+    harga: 750000,
+    deskripsi: "Design aplikasi mobile clean",
+    gambar: "https://picsum.photos/400/300?3",
+    kategori: "design"
+  },
+  {
+    nama: "Poster Digital",
+    harga: 200000,
+    deskripsi: "Desain poster menarik",
+    gambar: "https://picsum.photos/400/300?4",
+    kategori: "design"
+  }
+];
+
+// ================= TAMPILKAN PRODUK =================
+function tampilkanProduk(data) {
+  const container = document.getElementById("list-produk");
+  container.innerHTML = "";
+
+  data.forEach(item => {
+    container.innerHTML += `
+      <div class="col-md-3 mb-4">
+        <div class="card h-100">
+          <img src="${item.gambar}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">${item.nama}</h5>
+            <p class="card-text">${item.deskripsi}</p>
+            <p class="fw-bold text-primary">Rp ${item.harga.toLocaleString()}</p>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+}
+
+// ================= FILTER =================
+function filterProduk(kategori) {
+  if (kategori === "all") {
+    tampilkanProduk(produk);
+  } else {
+    const hasil = produk.filter(p => p.kategori === kategori);
+    tampilkanProduk(hasil);
+  }
+}
+
+// ================= LOAD AWAL =================
+tampilkanProduk(produk);
+</script>
 </body>
 </html>
