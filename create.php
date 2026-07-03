@@ -34,11 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
   <h1>Tambah Data</h1>
   <form method="POST">
-    <label> Nama:</label><br>
+    <label> Nama :</label><br>
     <input type="text" name="name" required><br><br>
-    <label> Email:</label><br>
+    <label> Email :</label><br>
     <input type="email" name="email" required><br><br>
-    <label> password:</label><br>
+    <label> password :</label><br>
     <input type="text" name="password" required><br><br> 
     <button type="submit">Simpan</button>
   </form>
